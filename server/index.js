@@ -10,7 +10,7 @@ var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/mongots', (err) => {
-  throw new Error( err );
+  if (err) throw new Error( err );
 });
 
 const PORT = 8080;

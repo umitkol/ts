@@ -23,18 +23,16 @@ export default {
         task: async ( _id ) => await Task.find({ _id }).exec(),
     },
     Mutation: {
-        createPerson: (_, {input}) => {
+        addPerson: (_, {input}) => {
             const doc = new Person(input);
-            doc.save(( err ) => {
-                console.log(err)
-            });
+            doc.save();
             return doc;
         }, 
         updatePerson: (_, {_id, input}) => {
             console.log(_id, input)
             return Person.update({ _id }, input);
         },
-        createProject: (_, {input}) => {
+        addProject: (_, {input}) => {
             const doc = new Project(input);
             doc.save(( err ) => {
                 console.log(err)

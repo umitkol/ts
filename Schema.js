@@ -77,15 +77,15 @@ export default `
 
     type Mutation {
 
-        createProject(input: ProjectInput!): Project
+        addProject(input: ProjectInput!): Project
         updateProject(_id: ID!, input: ProjectInput!): Project
         deleteProject(_id: ID!): Project
 
-        createPerson(input: PersonInput!): Person
+        addPerson(input: PersonInput!): Person
         updatePerson(_id: ID!, input: PersonInput!): Person
         deletePerson(_id: ID!): Person
 
-        createTask(input: TaskInput!): Task
+        addTask(input: TaskInput!): Task
         updateTask(_id: ID!, input: TaskInput!): Task
         deleteTask(_id: ID!): Task
 
