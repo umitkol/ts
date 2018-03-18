@@ -18,6 +18,10 @@ export default `
         fullName: String
     }
 
+    input PersonFilter {
+        skip: Int
+    }
+
     input ProjectInput {
         name: String!
         ICTContact: ID!
@@ -66,7 +70,7 @@ export default `
     type Query {
         projects: [Project]
         person(_id: ID!): Person
-        persons: [Person]
+        persons( filter: PersonFilter ): [Person]
         tasks: [Task]
         task(id: ID!): Task
     }
@@ -74,16 +78,16 @@ export default `
     type Mutation {
 
         createProject(input: ProjectInput!): Project
-        updateProject(id: ID!, input: ProjectInput!): Project
-        deleteProject(id: ID!): Project
+        updateProject(_id: ID!, input: ProjectInput!): Project
+        deleteProject(_id: ID!): Project
 
         createPerson(input: PersonInput!): Person
-        updatePerson(id: ID!, input: PersonInput!): Person
-        deletePerson(id: ID!): Person
+        updatePerson(_id: ID!, input: PersonInput!): Person
+        deletePerson(_id: ID!): Person
 
         createTask(input: TaskInput!): Task
-        updateTask(id: ID!, input: TaskInput!): Task
-        deleteTask(id: ID!): Task
+        updateTask(_id: ID!, input: TaskInput!): Task
+        deleteTask(_id: ID!): Task
 
     }
 `;
