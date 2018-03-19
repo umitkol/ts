@@ -24,17 +24,17 @@ export default `
 
     input ProjectInput {
         name: String!
-        ICTContact: ID!
-        businessContact: ID!
-        uxContact: ID!
+        ICTContact: ID
+        businessContact: ID
+        uxContact: ID
     }
 
     type Project {
-        id: ID!
+        _id: ID!
         name: String!
-        ICTContact: Person!
-        businessContact: Person!
-        uxContact: Person!
+        ICTContact: Person
+        businessContact: Person
+        uxContact: Person
     }
 
     input TaskInput {
@@ -83,7 +83,7 @@ export default `
 
         addPerson(input: PersonInput!): Person
         updatePerson(_id: ID!, input: PersonInput!): Person
-        deletePerson(_id: ID!): Person
+        deletePerson(_id: ID!): Person  
 
         addTask(input: TaskInput!): Task
         updateTask(_id: ID!, input: TaskInput!): Task
